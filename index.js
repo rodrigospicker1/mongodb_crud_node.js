@@ -3,7 +3,11 @@ const exphbs = require('express-handlebars')
 
 const app = express()
 
-app.engine('handlebars', exphbs())
+const conn = require("./db/conn")
+
+const productsRoutes = require('./routes/productRoutes')
+
+app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
 app.use(
@@ -13,3 +17,9 @@ app.use(
 )
 
 app.use(express.json())
+
+app.use(express.static('public'))
+
+app.use('/products', productsRoutes)
+
+app.listen(3000)
