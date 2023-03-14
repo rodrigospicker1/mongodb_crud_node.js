@@ -1,0 +1,24 @@
+<form action="/products/create" method="post">
+
+    <div class="user" style="display: flex;justify-content:center">
+        <div class="card text-bg-dark" style="margin: 20px;width:70%;">
+            <div class="card-header"><h1>Cadastrar produto</h1></div>
+            <div class="card-body row">
+                <div class=" col-6">
+                    <label for="name" class="form-label">Nome do produto</label>
+                    <input type="text" autocomplete = “off” class="form-control" placeholder="Digite nome do produto" name="name">
+                </div>
+                <div class=" col-6">
+                    <label for="price" class="form-label">Preço do produto</label>
+                    <input type="text" class="real form-control" placeholder="R$ 0,00" name="price">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Preço do produto</label>
+                    <textarea name="description" class="form-control" placeholder="Descrição do produto"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary col-3 mx-auto">Adicionar</button>
+            </div>
+        </div>
+    </div>
+
+</form>

@@ -12,3 +12,6 @@ async function run(){
         console.log(error)
     }
 }
+
+run().catch(console.error);
+module.exports = client

@@ -1,7 +1,6 @@
 {
   "name": "mongodb_crud_node",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,5 +14,15 @@
     "express-handlebars": "^7.0.2",
     "mongodb": "^5.1.0",
     "nodemon": "^2.0.21"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigospicker1/mongodb_crud_node.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rodrigospicker1/mongodb_crud_node.js/issues"
+  },
+  "homepage": "https://github.com/rodrigospicker1/mongodb_crud_node.js#readme",
+  "description": ""
 }
