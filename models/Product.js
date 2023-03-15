@@ -1,4 +1,5 @@
 const conn = require('../db/conn')
+const { ObjectId } = require('mongodb');
 
 const {MongoClient} = require('mongodb')
 
@@ -9,7 +10,7 @@ const client = new MongoClient(uri)
 class Product {
 
     constructor(name, image, price, description){
-
+        
         this.name = name
         this.price = price
         this.image = image
@@ -20,6 +21,7 @@ class Product {
     save(){
 
         const product = client.db().collection('products').insertOne({
+            id: Math.floor(Date.now() * Math.random()).toString(36),
             name: this.name,
             image: this.image,
             price: this.price,
@@ -33,6 +35,16 @@ class Product {
     static getProducts(){
         const products = conn.db().collection('products').find().toArray()
         return products
+    }
+
+    static async getProductById(id){
+        console.log(id)
+        const product = await conn
+                                .db()
+                                .collection('products')
+                                .findOne({id: id})
+        console.log(product)
+        return product
     }
 
 }
