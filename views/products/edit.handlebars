@@ -1,0 +1,28 @@
+<form action="/products/edit" method="post">
+<input type="hidden" name="id" value="{{product.id}}">
+    <div class="user" style="display: flex;justify-content:center">
+        <div class="card text-bg-dark" style="margin: 20px;width:70%;">
+            <div class="card-header"><h1>Editar produto</h1></div>
+            <div class="card-body row">
+                <div class=" col-6">
+                    <label for="name" class="form-label">Nome do produto</label>
+                    <input type="text" autocomplete="off" class="form-control" placeholder="Nome..." name="name" value="{{product.name}}">
+                </div>
+                <div class=" col-6">
+                    <label for="price" class="form-label">Preço do produto</label>
+                    <input type="text" class="real form-control" placeholder="R$ 0,00" name="price" value="{{product.price}}">
+                </div>
+                <div class="col-10" style="width: 100%;">
+                    <label for="image" class="form-label">URL da imagem do prduto</label>
+                    <input type="text" class="form-control" placeholder="URL..." name="image" value="{{product.image}}">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Descrição do produto</label>
+                    <textarea name="description" class="form-control" placeholder="Descrição...">{{product.description}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary col-3 mx-auto">Atualizar</button>
+            </div>
+        </div>
+    </div>
+
+</form>

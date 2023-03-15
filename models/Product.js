@@ -47,6 +47,11 @@ class Product {
         return 
     }
 
+    updateProduct(id){
+        conn.db().collection('products').updateOne({id: id}, {$set: this})
+        return 
+    }
+
 }
 
 module.exports = Product
