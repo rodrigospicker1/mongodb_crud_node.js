@@ -1,8 +1,23 @@
-<div class="content" style="background: #000000bd;padding: 2%;margin-top:2%;margin-left:15%;width: 70% !important;border-radius: 10px;">
-    <div class="image">
-        <img src="{{product.image}}" style="box-shadow: 0px 0px 10px 5px black;height:70vh;border-radius: 10px;">
-    </div>
-    <div class="info">
+<style>
+    .delete:hover{
+        box-shadow: 0px 0px 5px black;
+    }
+</style>
 
+<div class="content" style="flex-wrap: wrap;display: flex;background: #000000bd;padding: 2%;margin-top:2%;margin-left:15%;width: 70% !important;border-radius: 10px;">
+    <div class="image" style="">
+        <img src="{{product.image}}" style="width: 100%;box-shadow: 0px 0px 10px 5px black;height:70vh;border-radius: 10px;">
+    </div>
+    <div class="info" style="display:flex;flex-direction: column;justify-content: space-between;">
+        <div class="test">
+        <div class="name" style="color: #cfcfcf;font-size: 50px;padding-left: 25px;width:100%">{{product.name}}</div>
+        <div class="name" style="color: #cfcfcf;font-size: 25px;padding-left: 25px;margin-top:30px;width:100%">R$ {{product.price}}</div>
+        <div class="name" style="color: #cfcfcf;font-size: 25px;padding-left: 25px;margin-top:30px;width:100%">Descrição: {{product.description}}</div>
+        </div>
+        <div class="actions">
+            <form action="/products/remove/{{product.id}}" method="post" style="padding-left: 25px;margin-top:30px;width:100%">
+                <input type="submit" value="Excluir" class="delete" style="width:100%;height:30px;background-color: #b32121;border: 0;border-radius: 5px;">
+            </form>
+        </div>
     </div>
 </div>
