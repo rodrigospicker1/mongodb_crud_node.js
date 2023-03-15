@@ -8,10 +8,11 @@ const client = new MongoClient(uri)
 
 class Product {
 
-    constructor(name, price, description){
+    constructor(name, image, price, description){
 
         this.name = name
         this.price = price
+        this.image = image
         this.description = description
 
     }
@@ -20,6 +21,7 @@ class Product {
 
         const product = client.db().collection('products').insertOne({
             name: this.name,
+            image: this.image,
             price: this.price,
             description: this.description
         })

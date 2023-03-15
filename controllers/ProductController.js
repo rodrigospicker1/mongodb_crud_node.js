@@ -14,6 +14,7 @@ module.exports = class ProductController{
     static createProductPost(req, res){
         let name = req.body.name
         let price = req.body.price
+        let image = req.body.image
         let description = req.body.description
         
         
@@ -24,7 +25,7 @@ module.exports = class ProductController{
         price = price.replace(',','.');
         price = price.replace(' ','');
         
-        const product = new Product(name, parseFloat(price), description)
+        const product = new Product(name, image, parseFloat(price), description)
 
         product.save()
 
