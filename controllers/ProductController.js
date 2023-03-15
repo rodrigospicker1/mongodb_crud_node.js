@@ -2,8 +2,9 @@ const Product = require('../models/Product')
 
 
 module.exports = class ProductController{
-    static showProducts(req, res){
-        res.render('products/all')
+    static async showProducts(req, res){
+        const products = await Product.getProducts()
+        res.render('products/all', {products})
     }
 
     static createProduct(req, res){
@@ -11,9 +12,9 @@ module.exports = class ProductController{
     }
 
     static createProductPost(req, res){
-        const name = req.body.name
+        let name = req.body.name
         let price = req.body.price
-        const description = req.body.description
+        let description = req.body.description
         
         
         //Máscara price
@@ -23,10 +24,11 @@ module.exports = class ProductController{
         price = price.replace(',','.');
         price = price.replace(' ','');
         
-        const product = new Product(name, price, description)
+        const product = new Product(name, parseFloat(price), description)
 
         product.save()
 
         res.redirect('/products')
     }
+    
 }

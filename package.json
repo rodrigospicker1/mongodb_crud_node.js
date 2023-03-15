@@ -13,9 +13,10 @@
     "express": "^4.18.2",
     "express-handlebars": "^7.0.2",
     "mongodb": "^5.1.0",
+    "mongoose": "^7.0.1",
+    "mongose": "^0.0.2-security",
     "nodemon": "^2.0.21"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rodrigospicker1/mongodb_crud_node.js.git"
